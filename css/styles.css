@@ -1,0 +1,31 @@
+body{
+    background-image: url(../images/the-background-292720.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    width: auto;
+    background-color: blanchedalmond;
+    opacity: 0.85;
+    min-height: 600px;
+    align-items: center;
+    padding-top: 70px;
+    
+}
+
+.container .header{
+    text-align: center;
+    width: 100%;
+}
+
+.container .row {
+    width: 80%;
+}
+
+.container .row table{
+    height: 100px;
+    width: 100%;
+    
+}

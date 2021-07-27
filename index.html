@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Codebits eBooks</title>
+</head>
+<body>
+    <section class="container ">
+
+
+
+        <div class="row mx-auto">
+            <div class="header">
+                <h1>Codebits <span class="text-danger">eBooks</span> Library</h1>
+            </div>
+
+            <div class="col-md-12 form-group">
+                <p id="display"></p>
+            </div>
+
+            <div class="col-md-12 col-sm-12 form-group">
+                <input type="text" placeholder="Title" id=" title" class="form-control">
+            </div>
+            <div class="col-md-12 col-sm-12 form-group">
+                <input type="text" placeholder="Author" id=" author" class="form-control">
+            </div>
+            <div class="col-md-12 col-sm-12 form-group">
+                <input type="text" placeholder="ISBN" id=" isbn" class="form-control">
+            </div>
+            <div class="col-md-12 col-sm-12 form-group">
+                <input type="button" value="Add Book" id="btn" class="form-control btn btn-primary">
+            </div>
+
+            <div class="col-md-12 col-sm-12 form-group">
+                <table border="1" id="table" class=""></table>
+            </div>
+        </div>
+
+        
+
+    </section>
+
+    <script>
+
+        // select all the element of interest
+        let title2 = document.querySelector("#title");
+        let author2 = document.querySelector("#author");
+        let isbn2 = document.querySelector("#isbn");
+        let btn = document.querySelector("#btn");
+
+
+
+        // // collecting the Users Input
+            //  let inputTitle = document.getElementById("title").value;
+            //  let inputAuthor = document.getElementById("author").value;
+            //  let inputIsbn = document.getElementById("isbn").value;
+
+
+        // Creating a contructor function
+        function Book(title, author, isbn, action) {
+
+            this.title = title;
+            this.Author = author;
+            this.ISBN = isbn;
+            this.Action = action;
+        }
+
+        const userInput = [
+            new Book ("", "", "", "")
+        ];
+
+
+        // Bind btn to an event Listener
+
+        btn.addEventListener("click", addedBooks);
+
+
+
+        function addedBooks(){
+            // let titlerName = title2.value;
+            // let authorName = author2.value;
+            // let isbnName = isbn2.value;
+            
+            table.innerHTML = "";
+
+            let tr = document.createElement("tr")
+            tr.innerHTML = "<th>Title</th><th>Author</th><th>ISBN</th><th>ACTION</th>";
+
+        
+            table.appendChild(tr);
+
+            userInput.forEach(users => {
+                let tr = document.createElement("tr");
+                tr.innerHTML = `<td>${users.title}</td><td>${users.Author}</td><td>${users.ISBN}</td>`;
+
+                table.appendChild(tr);
+            })
+    
+        }
+
+
+    </script>
+</body>
+</html>
